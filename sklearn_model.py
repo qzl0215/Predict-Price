@@ -136,5 +136,7 @@ create_new_features(X, ori_data.return_holiday, 'return')  # closest holiday to 
 
 # save the converted input X into csv file
 X.to_csv('boscun_X.csv', index=False)
-# save the output y into csv file
-ori_data['total_usd'].to_csv('boscun_y.csv', index=False)
+
+y = pd.DataFrame()  # initiate empty matrix X
+y['total_usd'] = ori_data['total_usd']
+y.to_csv('boscun_y.csv', index=False)  # save y into csv file
